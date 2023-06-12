@@ -146,7 +146,7 @@
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div >
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="font-size:large;">
@@ -186,12 +186,34 @@
 </section>
 <!-- End paper abstract -->
 
+<section class="section hero ">
+  <div class="is-centered has-text-centered">
+    <h2 class="title is-3">Methodology</h2>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <p class="subtitle has-text-centered" style=" max-width: 60%;">
+        We utilize a model based on Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) cells, specifically leveraging a pre-trained VGG19 as a spatial feature extractor. This model works by processing frames sequentially through the TimeWarp layer, which allows for the extraction of spatial
+      features from each frame before the sequence is passed to the LSTM layer. The LSTM layer then learns
+      the temporal relationships between frames. To optimize our model, we experimented with different
+      hyperparameters such as learning rate, image size, number of frames, stride, and input types (RGB, flow,
+      and a combination of RGB and flow). Results showed that an RGB input yielded 0.98 test accuracy being
+      the highest, indicating its efficacy in our CNN-LSTM based model.
+      </p>
+    </div>
+    </div>
 
+</section>
 <!-- Image carousel -->
-<h2 class="subtitle has-text-centered" style="margin-top: 30px;">
-  We carried out our experiments starting with rgb inputs and chose many hyperparameters based on these experiments.
-</h2>
-<section class="hero is-small">
+
+
+
+<section class="hero is-small is-light">
+  <div class="is-centered has-text-centered" style="margin-top: 30px;">
+    <h2 class="title is-3">Experiments</h2>
+
+  </div>
+  <h2 class="subtitle has-text-centered" style="margin-top: 30px;">
+    We carried out our experiments starting with RGB inputs and chose many hyperparameters based on these experiments.
+  </h2>
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
