@@ -52,25 +52,34 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Violence Detection</h1>
+            <h1 class="title is-1 publication-title">Violence Detection From Videos</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://www.linkedin.com/in/muratsehzade" target="_blank">Murat Şehzade</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://www.linkedin.com/in/hamza-etciba%C5%9F%C4%B1-445a31232/" target="_blank">Hamza Etcibasi</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.linkedin.com/in/berke-bayraktar-0511ba195/" target="_blank">Berke Bayraktar</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Hacettepe University<br>BBM479-480 Design Project</span>
+
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://github.com/b21827407/Design-Project" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-github"></i>
+                        </span>
+                        <span>Code</span>
+                      </a>
+                    </span>
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
@@ -94,15 +103,7 @@
                   </span>
 
                   <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
@@ -124,11 +125,11 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
+
         <source src="static/videos/banner_video.mp4"
         type="video/mp4">
       </video>
@@ -137,7 +138,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -148,8 +149,35 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+            The exponential growth of video data, especially in security surveillance, presents a challenge in manual
+            monitoring and a need for automation. In this context, our project focuses on detecting and classifying
+            acts of violence from video data. Given the surge of interest in deep learning and computer vision for
+            video monitoring tasks, we propose an approach grounded on both deep learning techniques and other
+            proven methods for violence detection.</p>
+            <p>We utilize a model based on Convolutional Neural Networks (CNN) and Long Short-Term Memory
+              (LSTM) cells, specifically leveraging a pre-trained VGG19 as a spatial feature extractor. This model works
+              by processing frames sequentially through the TimeWarp layer, which allows for the extraction of spatial
+              features from each frame before the sequence is passed to the LSTM layer. The LSTM layer then learns
+              the temporal relationships between frames. To optimize our model, we experimented with different
+              hyperparameters such as learning rate, image size, number of frames, stride, and input types (RGB, flow,
+              and a combination of RGB and flow). Results showed that an RGB input yielded 0.98 test accuracy being
+              the highest, indicating its efficacy in our CNN-LSTM based model.</p>
+
+              <p>
+            The application and effectiveness of the proposed CNN-LSTM model, augmented by the incorporation of
+            an ensemble of existing methodologies, have marked a significant stride in the field of automated
+            violence detection and classification from video data. The efficacy of this model holds promising
+            implications for the future of automated security surveillance systems. The expected impact of this study
+            is considerable. The model demonstrates potential for deployment in real-world scenarios to enhance
+            security surveillance operations, thereby providing a layer of automation that could transform how
+            security monitoring is currently handled. This not only mitigates the risk of human error but also improves
+            the efficiency of monitoring, particularly in areas with an extensive number of surveillance cameras.</p>
+            <p>
+            Going forward, there are several directions for future exploration. The developed model can be subjected
+            to further fine-tuning and tested on a broader array of datasets for diversified violence scenarios. This
+            could ensure a more versatile violence detection system. In addition, although the work focused on
+            utilizing RGB input for optimal outcomes, future work can investigate other input modalities, such as
+            infrared or thermal imaging, to improve model robustness in varied environments.          </p>
         </div>
       </div>
     </div>
