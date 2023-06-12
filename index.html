@@ -188,38 +188,113 @@
 
 
 <!-- Image carousel -->
+<h2 class="subtitle has-text-centered">
+  We carried out our experiments starting with rgb inputs and chose many hyperparameters based on these experiments.
+</h2>
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          <b>INPUT_TYPE = 'RGB' - LEARNING RATE EXPERIMENTS</b>
         </h2>
+        <h2 class="subtitle has-text-centered">
+          In the course of our experimentation, we conducted multiple trials using different learning rates within the range of 1e-3 to 5*1e-5. Based on our findings, we were able to determine that a learning rate of 1e-4 was most suitable for our particular model. This conclusion was reached after a thorough analysis of the results obtained from the various trials, and we believe it to be an optimal choice for achieving the desired outcomes.
+        </h2>
+        <img src="static/images/1.png" alt="MY ALT TEXT"/>
+
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          <b>INPUT_TYPE = 'RGB' - IMAGE SIZE EXPERIMENTS</b>
         </h2>
+        <h2 class="subtitle has-text-centered">
+          Our experimental process involved testing various image sizes as a critical hyperparameter that significantly affects both training and test time. After conducting a series of experiments using image sizes of 100, 160, and 224, we found that larger image sizes were more effective in understanding video characteristics. Specifically, we observed that an image size of 224 yielded the highest accuracy and lowest test loss. However, it was also four times slower than the smallest image size of 100, while an image size of 160 was twice as slow as 100. Given these factors, we ultimately decided to adopt an image size of 100 as the default setting to prioritize overall speed in our processes.
+        </h2>
+        <img src="static/images/2.png" alt="MY ALT TEXT"/>
+
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
+          <b>INPUT_TYPE = 'RGB' - NUMBER OF FRAMES EXPERIMENTS</b>
+        </h2>
+        <h2 class="subtitle has-text-centered">
+          Throughout the course of our experimentation, we conducted numerous trials, utilizing varying numbers of frames ranging from 5 to 20. After analyzing the results, we were able to determine that 10 frames were the most suitable for our particular model. Our conclusion was reached after a thorough analysis of the data obtained from the various trials, and we strongly believe that this is the optimal choice for achieving the desired outcomes.
+        </h2>
+        <img src="static/images/3.png" alt="MY ALT TEXT"/>
+
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
+        <b>INPUT_TYPE = 'RGB' - STRIDE EXPERIMENTS</b>
       </h2>
+      <h2 class="subtitle has-text-centered">
+        Another parameter we put into test was stride to consider when extracting images from videos. We have tested 4 different parameters from stride=1 to stride=4. Based on results obtained, which can be seen on the graph below, we can see that stride of 3 performs best with a score of 0.94 by a small margin where as stride of 1 performs lowest with 0.92. This can be attributed to the fact that, algorithm is able to generalize better when looking at frames with stride of 3 instead of 1. Nonetheless, bigger stride doesnt’ always mean better results. As it can be seen on the graph, stride of 4 reduces score to 0.93. Although a marginal difference, it could be exacerbated when working on a larger dataset where it would make sense to try different stride values with more difference.
+      </h2>
+      <img src="static/images/4.png" alt="MY ALT TEXT"/>
+
     </div>
+    <div class="item">
+      <!-- Your image here -->
+      <h2 class="subtitle has-text-centered">
+        <b>INPUT_TYPE = 'RGB' - LOOP vs SQUEEZE EXPERIMENTS</b>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        During the course of our experimentation, we conducted several trials to determine the most appropriate method for our model - loop or squeeze. Our findings revealed that the squeeze method was more suitable for our specific model. This conclusion was reached after a thorough analysis of the results obtained from the multiple trials. We firmly believe that this is the optimal choice for achieving the desired outcomes based on our rigorous evaluation.      </h2>
+      <img src="static/images/5.png" alt="MY ALT TEXT"/>
+
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <h2 class="subtitle has-text-centered">
+        <b>INPUT_TYPE = 'FLOW'</b>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        In our study, we evaluated the efficacy of optical flow in analyzing video data. Specifically, we utilized the Lucas Canade algorithm to calculate optical flow between every two consecutive frames in our dataset, which yielded raw flow images. We then computed the magnitude and orientation between these two images and tested the effectiveness of using a combination of flow, magnitude, and orientation data in our analysis.
+        To compare the results obtained from these methods, we generated accuracy graphs and compared them with the accuracy of using RGB input modality. This evaluation process was conducted with a rigorous and systematic approach, utilizing multiple trials to ensure the validity of our findings.</h2>
+      <img src="static/images/6.png" alt="MY ALT TEXT"/>
+
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <h2 class="subtitle has-text-centered">
+        <b>INPUT_TYPE = 'RGB + FLOW'</b>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        Lastly, our experimental process involved conducting three distinct trials to compare the efficacy of different input types - RGB, flow, and a combination of RGB and flow - in our CNN-LSTM based model. Our analysis of the results revealed that the RGB input was the most effective modality for our model. Specifically, we observed that the combination of RGB and flow was slightly less effective than the RGB input alone, as illustrated in the plotted data below.
+        Our study utilized a rigorous and systematic approach to testing the effectiveness of different input types, employing multiple trials to ensure the validity of our findings. Based on our results, we believe that the RGB input is the optimal choice for achieving the desired outcomes in our CNN-LSTM based model. </h2>
+      <img src="static/images/7.png" alt="MY ALT TEXT"/>
+
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <h2 class="subtitle has-text-centered">
+        <b>INPUT_TYPE = 'RGB' - BACKBONE: VGG19 vs RESNET50 EXPERIMENTS</b>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        In our comprehensive evaluation of the VGG19 and ResNet50 backbones for a specific task, we have found that the VGG19 architecture demonstrates superior performance in terms of accuracy and convergence to 1.00 on the training set. Furthermore, the VGG19 model exhibits a more consistent loss and accuracy plot throughout the training process.
+        Although ResNet50 has demonstrated better accuracy in widely recognized image classification tasks such as ImageNet. We think that in our specific task, the dataset used in our evaluation had a simpler structure or contained features that were better captured by the shallower VGG19 network. In such cases, the additional depth of ResNet50 may not provide a significant advantage and could even lead to overfitting or increased complexity without substantial performance gains.</h2>
+      <img src="static/images/8.png" alt="MY ALT TEXT"/>
+
+    </div>
+    <div class="item" >
+      <!-- Your image here -->
+      <h2 class="subtitle has-text-centered">
+        <b>INPUT_TYPE = 'RGB' - FUSION METHOD: EARLY vs LATE EXPERIMENTS</b>
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        For the best configuration, where we use RGB input type, vgg19 as a backbone, numFrames=10 and stride=3, squeeze method and image_size=224; we didn't see any significant change between utilizing early and late fusion methods.</h2>
+      <img src="static/images/9.png" alt="MY ALT TEXT"/>
+
+    </div>
+
+
+
   </div>
 </div>
 </div>
